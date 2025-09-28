@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Manpreet Kaur — Portfolio</title>
+  <meta name="description" content="Simple portfolio built with HTML, CSS and JavaScript">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">MK</div>
+        <div>
+          <div style="font-weight:800">Manpreet Kaur</div>
+          <div style="font-size:12px;color:var(--muted)">Frontend Developer & Designer</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card">
+          <h1>Hi — I build clean, accessible web interfaces.</h1>
+          <p class="lead">I’m a frontend developer focused on HTML, CSS and JavaScript. Here are a few of my projects and a way to contact me.</p>
+          <a class="cta" href="#projects">See projects</a>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <a style="color:var(--muted);font-size:13px;text-decoration:none" href="#contact">Email</a>
+            <a style="color:var(--muted);font-size:13px;text-decoration:none" href="#contact">LinkedIn</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-hidden="false">
+          <h3 style="margin:0 0 8px">Quick info</h3>
+          <p style="margin:0 0 8px;color:var(--muted)">Location: Canada<br>Available for contract work</p>
+          <div style="margin-top:12px">
+            <strong>Skills</strong>
+            <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+              <li>HTML & ARIA</li>
+              <li>CSS (Flexbox, Grid)</li>
+              <li>Vanilla JavaScript</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects">
+        <h2 style="margin-bottom:12px">Projects</h2>
+        <div class="projects">
+          <article class="project" data-title="Recipe App" data-desc="A responsive recipe app with search and localStorage favorites." data-link="#">
+            <div class="preview">Preview</div>
+            <h3>Recipe App</h3>
+            <p>Search, view and favourite recipes.</p>
+          </article>
+
+          <article class="project" data-title="Portfolio Site" data-desc="This portfolio site (HTML/CSS/JS) with lightbox modals and smooth scroll." data-link="#">
+            <div class="preview">Preview</div>
+            <h3>Portfolio Site</h3>
+            <p>Personal portfolio with project modals.</p>
+          </article>
+
+          <article class="project" data-title="To-Do PWA" data-desc="A small progressive web app for tasks with offline support." data-link="#">
+            <div class="preview">Preview</div>
+            <h3>To-Do PWA</h3>
+            <p>Tasks with offline caching and localStorage.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:18px">
+        <div class="grid-2">
+          <div class="card">
+            <h2>About me</h2>
+            <p class="lead">I enjoy building interfaces that are both delightful and easy to use. I focus on performance, accessibility and clean code.</p>
+            <p style="color:var(--muted)">I used HTML, CSS and JavaScript for UI work and have experience collaborating with designers and backend teams to ship features.</p>
+          </div>
+
+          <div class="card">
+            <h3>Contact</h3>
+            <form id="contact" onsubmit="return submitContact(event)">
+              <label for="name">Name</label>
+              <input id="name" required>
+              <label for="email">Email</label>
+              <input id="email" type="email" required>
+              <label for="message">Message</label>
+              <textarea id="message" required></textarea>
+              <div style="margin-top:10px">
+                <button type="submit" class="cta">Send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>© Manpreet Kaur — Built with HTML, CSS & JavaScript.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal for project details -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="box card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <strong id="modal-title">Project title</strong>
+        <button id="modal-close" class="close-btn" aria-label="Close">✕</button>
+      </div>
+      <p id="modal-desc" style="color:var(--muted)">Project description</p>
+      <div style="margin-top:12px">
+        <a id="modal-link" class="cta" href="#">View project</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
